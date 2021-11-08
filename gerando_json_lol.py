@@ -1,20 +1,26 @@
 import json
 import requests
 
+"""No meu desafio de hoje, eu queria baixar algum JSON, pegar alguns dados e salvar em um novo JSON. Encontrei o JSON 
+do jogo League Of Legends e separei as seguintes informações: Nome do campeão, Título, Posição no jogo, Fala, Dificuldade, 
+Vida, Armadura, Resistência Mágica e Velocidade de Movimento. """
+
 r = requests.get('http://ddragon.leagueoflegends.com/cdn/11.22.1/data/en_US/champion.json')
 lol = r.json()
 data = lol['data']
 
+# Criei listas para guardar as informações que eu queria.
 champ = []
-blurb = []
-tags = []
 title = []
-campeoes = []
+tags = []
+blurb = []
 diff = []
 hp = []
-movespeed = []
 armor = []
 mr = []
+movespeed = []
+campeoes = []
+
 
 
 def separar_infos() :
